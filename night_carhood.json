@@ -625,15 +625,18 @@
       "filter": ["all",
         ["==", "class", "fuel"],
         ["!=", "subclass", "charging_station"],
-        ["match", ["get", "name"],
-          ["Shell", "Orlen", "BP", "Moya", "Lotos"], true,
-          false
+        ["any",
+          [">=", ["index-of", "Shell", ["get", "name"]], 0],
+          [">=", ["index-of", "Orlen", ["get", "name"]], 0],
+          [">=", ["index-of", "BP", ["get", "name"]], 0],
+          [">=", ["index-of", "Moya", ["get", "name"]], 0],
+          [">=", ["index-of", "Lotos", ["get", "name"]], 0]
         ]
       ],
       "minzoom": 14,
       "layout": {
         "visibility": "none",
-        "text-field": ["concat", "⛽ ", ["get", "name"]],
+        "text-field": ["get", "name"],
         "text-font": ["Open Sans Bold"],
         "text-size": [
           "interpolate", ["linear"], ["zoom"],
@@ -647,12 +650,12 @@
         "text-offset": [0, 0.4]
       },
       "paint": {
-        "text-color": ["match", ["get", "name"],
-          "Shell", "#FFCC00",
-          "Orlen", "#E2231A",
-          "BP", "#009639",
-          "Moya", "#3D8BFF",
-          "Lotos", "#F39200",
+        "text-color": ["case",
+          [">=", ["index-of", "Shell", ["get", "name"]], 0], "#FFCC00",
+          [">=", ["index-of", "Orlen", ["get", "name"]], 0], "#E2231A",
+          [">=", ["index-of", "BP", ["get", "name"]], 0], "#009639",
+          [">=", ["index-of", "Moya", ["get", "name"]], 0], "#3D8BFF",
+          [">=", ["index-of", "Lotos", ["get", "name"]], 0], "#F39200",
           "#FFD54F"
         ],
         "text-halo-color": "#0A0E27",
@@ -671,7 +674,7 @@
       "minzoom": 15,
       "layout": {
         "visibility": "none",
-        "text-field": "🧼 Myjnia",
+        "text-field": "Myjnia",
         "text-font": ["Open Sans Bold"],
         "text-size": [
           "interpolate", ["linear"], ["zoom"],
@@ -698,7 +701,7 @@
       "minzoom": 14,
       "layout": {
         "visibility": "none",
-        "text-field": ["concat", "⚡ ", ["coalesce", ["get", "name"], "Ładowanie EV"]],
+        "text-field": ["coalesce", ["get", "name"], "Ładowanie EV"],
         "text-font": ["Open Sans Bold"],
         "text-size": [
           "interpolate", ["linear"], ["zoom"],
@@ -711,7 +714,7 @@
         "text-offset": [0, 0.4]
       },
       "paint": {
-        "text-color": "#69F0AE",
+        "text-color": "#D580FF",
         "text-halo-color": "#0A0E27",
         "text-halo-width": 2
       }
