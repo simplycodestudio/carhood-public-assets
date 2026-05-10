@@ -12,6 +12,7 @@
     }
   },
   "glyphs": "https://fonts.openmaptiles.org/{fontstack}/{range}.pbf",
+  "sprite": "https://cdn.jsdelivr.net/gh/simplycodestudio/carhood-public-assets@3d4a8ebc/sprite",
   "layers": [
     {
       "id": "background",
@@ -636,6 +637,22 @@
       "minzoom": 14,
       "layout": {
         "visibility": "none",
+        "icon-image": ["case",
+          [">=", ["index-of", "Shell", ["get", "name"]], 0], "shell-pin",
+          [">=", ["index-of", "Orlen", ["get", "name"]], 0], "orlen-pin",
+          [">=", ["index-of", "BP", ["get", "name"]], 0], "bp-pin",
+          [">=", ["index-of", "Moya", ["get", "name"]], 0], "moya-pin",
+          [">=", ["index-of", "Lotos", ["get", "name"]], 0], "lotos-pin",
+          ""
+        ],
+        "icon-size": [
+          "interpolate", ["linear"], ["zoom"],
+          14, 0.7,
+          16, 0.85,
+          18, 1.0
+        ],
+        "icon-anchor": "bottom",
+        "icon-allow-overlap": false,
         "text-field": ["get", "name"],
         "text-font": ["Open Sans Bold"],
         "text-size": [
@@ -647,7 +664,7 @@
         "text-max-width": 8,
         "text-padding": 4,
         "text-anchor": "top",
-        "text-offset": [0, 0.4]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-color": ["case",
@@ -674,6 +691,14 @@
       "minzoom": 15,
       "layout": {
         "visibility": "none",
+        "icon-image": "carwash-pin",
+        "icon-size": [
+          "interpolate", ["linear"], ["zoom"],
+          15, 0.7,
+          18, 1.0
+        ],
+        "icon-anchor": "bottom",
+        "icon-allow-overlap": false,
         "text-field": "Myjnia",
         "text-font": ["Open Sans Bold"],
         "text-size": [
@@ -681,7 +706,9 @@
           15, 10,
           18, 12
         ],
-        "text-padding": 4
+        "text-padding": 4,
+        "text-anchor": "top",
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-color": "#81D4FA",
@@ -701,6 +728,14 @@
       "minzoom": 14,
       "layout": {
         "visibility": "none",
+        "icon-image": "ev-pin",
+        "icon-size": [
+          "interpolate", ["linear"], ["zoom"],
+          14, 0.7,
+          18, 1.0
+        ],
+        "icon-anchor": "bottom",
+        "icon-allow-overlap": false,
         "text-field": ["coalesce", ["get", "name"], "Ładowanie EV"],
         "text-font": ["Open Sans Bold"],
         "text-size": [
@@ -711,7 +746,7 @@
         "text-max-width": 8,
         "text-padding": 4,
         "text-anchor": "top",
-        "text-offset": [0, 0.4]
+        "text-offset": [0, 0.5]
       },
       "paint": {
         "text-color": "#D580FF",
