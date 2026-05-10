@@ -679,7 +679,7 @@
         ["==", "class", "fuel"],
         ["!=", "subclass", "charging_station"]
       ],
-      "minzoom": 10,
+      "minzoom": 8,
       "layout": {
         "visibility": "none",
         "icon-image": ["case",
@@ -692,7 +692,8 @@
         ],
         "icon-size": [
           "interpolate", ["linear"], ["zoom"],
-          10, 0.30,
+          8, 0.18,
+          10, 0.28,
           12, 0.45,
           14, 0.65,
           16, 0.85,
@@ -742,12 +743,13 @@
         ["==", "class", "car_wash"],
         ["==", "subclass", "car_wash"]
       ],
-      "minzoom": 11,
+      "minzoom": 9,
       "layout": {
         "visibility": "none",
         "icon-image": "carwash-pin",
         "icon-size": [
           "interpolate", ["linear"], ["zoom"],
+          9, 0.18,
           11, 0.30,
           13, 0.5,
           15, 0.7,
@@ -766,13 +768,14 @@
         ["==", "class", "charging_station"],
         ["==", "subclass", "charging_station"]
       ],
-      "minzoom": 10,
+      "minzoom": 8,
       "layout": {
         "visibility": "none",
         "icon-image": "ev-pin",
         "icon-size": [
           "interpolate", ["linear"], ["zoom"],
-          10, 0.30,
+          8, 0.18,
+          10, 0.28,
           12, 0.45,
           14, 0.65,
           18, 1.0
