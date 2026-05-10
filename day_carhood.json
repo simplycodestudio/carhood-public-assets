@@ -676,12 +676,16 @@
       "source-layer": "poi",
       "filter": ["all",
         ["==", "class", "fuel"],
-        ["!=", "subclass", "charging_station"]
+        ["!=", "subclass", "charging_station"],
+        ["match", ["get", "name"],
+          ["Shell", "Orlen", "BP", "Moya", "Lotos"], true,
+          false
+        ]
       ],
       "minzoom": 14,
       "layout": {
         "visibility": "none",
-        "text-field": ["concat", "⛽ ", ["coalesce", ["get", "name"], "Stacja paliw"]],
+        "text-field": ["concat", "⛽ ", ["get", "name"]],
         "text-font": ["Open Sans Bold"],
         "text-size": [
           "interpolate", ["linear"], ["zoom"],
@@ -695,9 +699,16 @@
         "text-offset": [0, 0.4]
       },
       "paint": {
-        "text-color": "#E65100",
+        "text-color": ["match", ["get", "name"],
+          "Shell", "#C8A300",
+          "Orlen", "#C0151B",
+          "BP", "#007731",
+          "Moya", "#0050B3",
+          "Lotos", "#D87900",
+          "#E65100"
+        ],
         "text-halo-color": "#FFFFFF",
-        "text-halo-width": 2
+        "text-halo-width": 2.2
       }
     },
     {
