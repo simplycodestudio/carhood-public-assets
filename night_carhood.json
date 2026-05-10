@@ -622,20 +622,23 @@
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "poi",
-      "filter": ["==", "class", "fuel"],
-      "minzoom": 13,
+      "filter": ["all",
+        ["==", "class", "fuel"],
+        ["!=", "subclass", "charging_station"]
+      ],
+      "minzoom": 14,
       "layout": {
         "visibility": "none",
-        "text-field": ["coalesce", ["get", "name"], "Stacja paliw"],
+        "text-field": ["concat", "⛽ ", ["coalesce", ["get", "name"], "Stacja paliw"]],
         "text-font": ["Open Sans Bold"],
         "text-size": [
           "interpolate", ["linear"], ["zoom"],
-          13, 10,
+          14, 10,
           16, 12,
           18, 13
         ],
-        "text-max-width": 7,
-        "text-padding": 3,
+        "text-max-width": 8,
+        "text-padding": 4,
         "text-anchor": "top",
         "text-offset": [0, 0.4]
       },
@@ -650,18 +653,21 @@
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "poi",
-      "filter": ["==", "class", "car_wash"],
-      "minzoom": 14,
+      "filter": ["any",
+        ["==", "class", "car_wash"],
+        ["==", "subclass", "car_wash"]
+      ],
+      "minzoom": 15,
       "layout": {
         "visibility": "none",
         "text-field": "🧼 Myjnia",
         "text-font": ["Open Sans Bold"],
         "text-size": [
           "interpolate", ["linear"], ["zoom"],
-          14, 10,
+          15, 10,
           18, 12
         ],
-        "text-padding": 3
+        "text-padding": 4
       },
       "paint": {
         "text-color": "#81D4FA",
@@ -674,18 +680,24 @@
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "poi",
-      "filter": ["==", "class", "charging_station"],
-      "minzoom": 13,
+      "filter": ["any",
+        ["==", "class", "charging_station"],
+        ["==", "subclass", "charging_station"]
+      ],
+      "minzoom": 14,
       "layout": {
         "visibility": "none",
-        "text-field": "⚡ EV",
+        "text-field": ["concat", "⚡ ", ["coalesce", ["get", "name"], "Ładowanie EV"]],
         "text-font": ["Open Sans Bold"],
         "text-size": [
           "interpolate", ["linear"], ["zoom"],
-          13, 10,
+          14, 10,
           18, 13
         ],
-        "text-padding": 3
+        "text-max-width": 8,
+        "text-padding": 4,
+        "text-anchor": "top",
+        "text-offset": [0, 0.4]
       },
       "paint": {
         "text-color": "#69F0AE",
