@@ -34,15 +34,22 @@
     "height": 80,
     "pixelRatio": 2
   },
-  "carwash-pin": {
+  "fuel-pin": {
     "x": 320,
     "y": 0,
     "width": 64,
     "height": 80,
     "pixelRatio": 2
   },
-  "ev-pin": {
+  "carwash-pin": {
     "x": 384,
+    "y": 0,
+    "width": 64,
+    "height": 80,
+    "pixelRatio": 2
+  },
+  "ev-pin": {
+    "x": 448,
     "y": 0,
     "width": 64,
     "height": 80,
