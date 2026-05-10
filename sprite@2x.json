@@ -1,0 +1,51 @@
+{
+  "shell-pin": {
+    "x": 0,
+    "y": 0,
+    "width": 64,
+    "height": 80,
+    "pixelRatio": 2
+  },
+  "orlen-pin": {
+    "x": 64,
+    "y": 0,
+    "width": 64,
+    "height": 80,
+    "pixelRatio": 2
+  },
+  "bp-pin": {
+    "x": 128,
+    "y": 0,
+    "width": 64,
+    "height": 80,
+    "pixelRatio": 2
+  },
+  "moya-pin": {
+    "x": 192,
+    "y": 0,
+    "width": 64,
+    "height": 80,
+    "pixelRatio": 2
+  },
+  "lotos-pin": {
+    "x": 256,
+    "y": 0,
+    "width": 64,
+    "height": 80,
+    "pixelRatio": 2
+  },
+  "carwash-pin": {
+    "x": 320,
+    "y": 0,
+    "width": 64,
+    "height": 80,
+    "pixelRatio": 2
+  },
+  "ev-pin": {
+    "x": 384,
+    "y": 0,
+    "width": 64,
+    "height": 80,
+    "pixelRatio": 2
+  }
+}
