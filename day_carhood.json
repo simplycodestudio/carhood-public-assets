@@ -668,6 +668,82 @@
         "text-halo-color": "#F4F6FB",
         "text-halo-width": 1.5
       }
+    },
+    {
+      "id": "poi-fuel",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "filter": ["==", "class", "fuel"],
+      "minzoom": 13,
+      "layout": {
+        "visibility": "none",
+        "text-field": ["coalesce", ["get", "name"], "Stacja paliw"],
+        "text-font": ["Open Sans Bold"],
+        "text-size": [
+          "interpolate", ["linear"], ["zoom"],
+          13, 10,
+          16, 12,
+          18, 13
+        ],
+        "text-max-width": 7,
+        "text-padding": 3,
+        "text-anchor": "top",
+        "text-offset": [0, 0.4]
+      },
+      "paint": {
+        "text-color": "#E65100",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "poi-carwash",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "filter": ["==", "class", "car_wash"],
+      "minzoom": 14,
+      "layout": {
+        "visibility": "none",
+        "text-field": "🧼 Myjnia",
+        "text-font": ["Open Sans Bold"],
+        "text-size": [
+          "interpolate", ["linear"], ["zoom"],
+          14, 10,
+          18, 12
+        ],
+        "text-padding": 3
+      },
+      "paint": {
+        "text-color": "#0277BD",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "poi-charging",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "filter": ["==", "class", "charging_station"],
+      "minzoom": 13,
+      "layout": {
+        "visibility": "none",
+        "text-field": "⚡ EV",
+        "text-font": ["Open Sans Bold"],
+        "text-size": [
+          "interpolate", ["linear"], ["zoom"],
+          13, 10,
+          18, 13
+        ],
+        "text-padding": 3
+      },
+      "paint": {
+        "text-color": "#1B5E20",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 2
+      }
     }
   ]
 }
