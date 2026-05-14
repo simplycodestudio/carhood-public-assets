@@ -12,7 +12,7 @@
     }
   },
   "glyphs": "https://fonts.openmaptiles.org/{fontstack}/{range}.pbf",
-  "sprite": "https://cdn.jsdelivr.net/gh/simplycodestudio/carhood-public-assets@58c03bd3/sprite",
+  "sprite": "https://cdn.jsdelivr.net/gh/simplycodestudio/carhood-public-assets@25e9725/sprite",
   "layers": [
     {
       "id": "background",
